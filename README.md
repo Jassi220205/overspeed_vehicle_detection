@@ -1,74 +1,81 @@
-Overspeed Vehicle Detection System
+# Overspeed Vehicle Detection System
 
-An AI-based system that detects vehicles from video, estimates their
-speed, and flags overspeeding vehicles using computer vision and deep
-learning.
+An AI-based traffic monitoring system that detects vehicles from surveillance
+videos, tracks them, estimates their speed, and identifies overspeeding
+vehicles using deep learning and computer vision.
 
-Project Overview
+The project also includes a web-based interface that allows users to upload
+traffic videos and initiate automated vehicle detection and speed analysis.
 
--   Detect vehicles in traffic video
--   Estimate speed using frame-based motion
--   Flag overspeeding vehicles
--   Provide web interface for upload and results
+---
 
-Tech Stack
+## Project Overview
 
-Python, OpenCV, YOLOv8, PyTorch, Flask, NumPy
+The Overspeed Vehicle Detection System is designed to automate vehicle
+monitoring from traffic surveillance footage.
 
-System Workflow
+The system:
 
-Upload Video → Frame Processing → Vehicle Detection → Speed Estimation →
-Overspeed Detection → Output Video
+- Detects vehicles in traffic videos
+- Tracks detected vehicles using unique IDs
+- Estimates vehicle speed from frame-based movement
+- Identifies vehicles exceeding the configured speed threshold
+- Generates overspeed alerts
+- Provides a web interface for video upload and processing
+- Produces processed detection results
 
-Model
+---
 
--   YOLOv8 (Nano)
--   Real-time object detection
--   Efficient and lightweight
+## Objectives
 
-Detection Classes
+- Automate vehicle detection from traffic surveillance videos
+- Monitor vehicle movement across video frames
+- Estimate the speed of detected vehicles
+- Identify overspeeding vehicles
+- Provide a simple web interface for video processing
+- Demonstrate the integration of AI/computer vision with web technologies
 
--   Car
--   Motorcycle
--   Bus
--   Truck
+---
 
+## Tech Stack
+
+### AI / Computer Vision
+- Python
+- YOLOv8 Nano
+- OpenCV
+- PyTorch
+- NumPy
+
+### Web Technologies
+- HTML
+- CSS
+- JavaScript
+- React.js
+- Flask
+
+### Development Tools
+- VS Code
+- Git / GitHub
+
+---
+
+## System Workflow
+
+```text
+Traffic Video
+      ↓
+Video Upload
+      ↓
+Frame-by-Frame Processing
+      ↓
+Vehicle Detection using YOLOv8
+      ↓
+Vehicle Tracking
+      ↓
 Speed Estimation
-
-Speed = Distance / Time
-Scaled: speed = (distance_pixels / time_taken) * 0.1
-
-Tracking
-
-Simple ID assignment using bounding box center: obj_id = int(cx / 100)
-
-Features
-
--   Bounding boxes on vehicles
--   Overspeed alerts
--   Processed video output
-
-Project Structure
-
-vehicle_violation_project/ - app.py - vehicle.py - templates/ -
-uploads/ - outputs/ - requirements.txt
-
-Setup Instructions
-
-1.  Clone repo
-2.  Create virtual environment
-3.  Install dependencies
-4.  Run app.py
-5.  Open browser at http://127.0.0.1:5000
-
-Limitations
-
--   Not real-world calibrated
--   Basic tracking
--   No number plate detection
--   Not fully real-time
-
-Conclusion
-
-A functional prototype combining deep learning, computer vision, and web
-deployment for traffic monitoring.
+      ↓
+Speed Threshold Comparison
+      ↓
+Overspeed Detection
+      ↓
+Detection Results / Output
